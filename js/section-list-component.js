@@ -1,4 +1,4 @@
-export function createInputListComponent(componentElem) {
+function createInputListComponent(componentElem) {
   const templateElem = componentElem.querySelector(".app-tmp-number-component");
 
   if (templateElem === null) {
