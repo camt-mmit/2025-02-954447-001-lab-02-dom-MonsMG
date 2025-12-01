@@ -82,10 +82,15 @@ function createSectionListComponent() {
   }
 
   const regenerateSectionTitles = () => {
-    const sections = sectionContainer.querySelectorAll(".app-cmp-section");
+    const sections = [...sectionContainer.querySelectorAll(".app-cmp-section")];
+
     sections.forEach((section, index) => {
       const titleSpan = section.querySelector(".app-section-title-number");
       if (titleSpan) titleSpan.textContent = index + 1;
+      const removeBtn = section.querySelector(".app-cmd-remove-section");
+      if (removeBtn) {
+        removeBtn.disabled = sections.length === 1;
+      }
     });
   };
 
